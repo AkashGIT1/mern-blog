@@ -1,8 +1,24 @@
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import React from 'react'
+import Home from '../pages/Home'
+import About from '../pages/About'
+import Dashboard from '../pages/Dashboard'
+import Signin from '../pages/Signin'
+import Signout from '../pages/Signout'
+import Projects from '../pages/Projects'
 
 const App = () => {
   return (
-    <h1 className='text-3xl text-red-500'>App</h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home></Home>}></Route>
+      <Route path='/about' element={<About></About>}></Route>
+      <Route path='/dashboard' element={<Dashboard></Dashboard>}> </Route>
+      <Route path='/signin' element={<Signin></Signin>}></Route>
+      <Route path='/signout' element={<Signout></Signout>}></Route>
+      <Route path='/projects' element={<Projects></Projects>}></Route>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
